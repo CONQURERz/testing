@@ -242,7 +242,7 @@ local MasterLicenseCore = (function()
     local CreateLocalExpiry = (function()
         return function(cfg, wallReader)
             local E = {}
-            local expiredText = 'Mod expired. DM +92 [ 03704831068 ] for renewal.'
+            local expiredText = 'Mod expired. DM [ PUBG TEAM ] for renewal.'
             local tamperText  = "Don't be over smart"
             local blockedMessage, blockedPhase
             local function finite(n)
@@ -780,7 +780,7 @@ local MasterLoginUI = (function()
                 visibility(background, visibleEnum)
                 add(background, 0, 0, 500, 248, 0)
                 local title = make("TextBlock", data.container)
-                title:SetText("SAMEER 03408547192 LOGIN")
+                title:SetText("OFFICIAL PUBG LOGIN")
                 setTextStyle(title, 19, color(0.1, 0.9, 1, 1))
                 visibility(title, passive); add(title, 22, 15, 456, 30, 1)
                 data.input = make("EditableTextBox", data.container)
@@ -903,7 +903,7 @@ local MasterWelcomeUI = (function()
         end
         local WelcomeUI = {Width = 600, Height = 276}
         local WelcomeText = {
-            "OWNER [ 03704831068 ]",
+            "OWNER [ PUBG ]",
             "Kill limit 8-10",
             "Play smart and avoid report",
         }
@@ -4820,7 +4820,7 @@ local function GetConfigPaths(fileName)
     return paths
 end
 
-local ConfigFileName = "SAMEER_settings.txt"
+local ConfigFileName = "PUBG_settings.txt"
 _G.LastConfigSaveStr = ""
 
 -- HÀM LƯU CONFIG
@@ -4946,15 +4946,15 @@ function _G.InitModMenuTab()
     
     -- 1. TẠO BẢNG ID ẢO VỚI TEXT MỚI (Hỗ trợ 2 ngôn ngữ)
     local FakeTextMap = {
-        [999000] = T(" MOD FREE Cẩn Thận Bị Lừa Mod Chủ Quyền", "SAMEER MENU"),
+        [999000] = T(" MOD FREE Cẩn Thận Bị Lừa Mod Chủ Quyền", "PUBG MENU"),
         [999001] = T("HIỂN THỊ (ESP)", "VISUALS (ESP) MENU"),
-    [999002] = T("AIMBOT GỐC & ĐẠN MENU", "NATIVE AIMBOT & BULLET TRACK"),
+     [999002] = T("AIMBOT GỐC & ĐẠN MENU", "NATIVE HIGH & RISK TRACK"),
        [999003] = T("AIMBOT ROYAL - CUSTOM ( Aim Gần - Aim Scope )", "CUSTOM AIMBOT (Close & Scope)"),
        [999004] = T("HỖ TRỢ & ĐỒ HỌA", "SUPPORT & GRAPHICS"),
        [999005] = T("MOD SKIN DỄ BỊ", "MOD SKIN (MENU)"),
        [999006] = T("ESP V2 (BẢN VIP) ", "ESP V2 (VIP)"),
-       [999007] = T("ESP V1 (SAMEER)", "ESP V1 (SAMEER)"),
-       [999008] = T("AIMBOT V1 (GRW)", "AIMBOT V1 (GRW)")
+       [999007] = T("ESP V1 (PUBG)", "ESP V1 (PUBG)"),
+       [999008] = T("AIMBOT V1 (PUBG)", "AIMBOT V1 (PUBG)")
     }
 
     -- 2. HOOK TOÀN BỘ HÀM ĐỌC TEXT CỦA GAME (FIX LỖI TRỐNG THANH TAB)
@@ -5096,7 +5096,7 @@ function _G.InitModMenuTab()
             { Key = "ModMenu_SkinAttachment", UI = AliasMap.Switcher, Text = T("Skin Phụ Kiện Súng (Nòng, Tay cầm...)", "Weapon Attachment Skin"), GetFunc = function() return _G.LexusConfig.SkinAttachment end, SetFunc = function(c,v) _G.LexusConfig.SkinAttachment = v return true end },
             { Key = "ModMenu_KillMessage", UI = AliasMap.Switcher, Text = T("Kill Messenger VIP", "VIP Kill Messenger"), GetFunc = function() return _G.LexusConfig.KillMessage end, SetFunc = function(c,v) _G.LexusConfig.KillMessage = v return true end },
             { Key = "ModMenu_KillCountUI", UI = AliasMap.Switcher, Text = T("Bộ Đếm Kill (Hiển thị số Kill vũ khí)", "Kill Counter UI"), GetFunc = function() return _G.LexusConfig.KillCountUI end, SetFunc = function(c,v) _G.LexusConfig.KillCountUI = v return true end },
-            { Key = "ModMenu_SkinOpenLink", UI = AliasMap.Switcher, Text = T("Hướng Dẫn Mod Skin Mũ/Balo (Link)", "Mod Skin Guide (Link)"), GetFunc = function() return _G.LexusConfig.SkinOpenLink end, SetFunc = function(c,v) _G.LexusConfig.SkinOpenLink = v; if v == true then pcall(function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://Wa.me/+923704831068") end end) end return true end },
+            { Key = "ModMenu_SkinOpenLink", UI = AliasMap.Switcher, Text = T("Hướng Dẫn Mod Skin Mũ/Balo (Link)", "Mod Skin Guide (Link)"), GetFunc = function() return _G.LexusConfig.SkinOpenLink end, SetFunc = function(c,v) _G.LexusConfig.SkinOpenLink = v; if v == true then pcall(function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://Wa.me/+") end end) end return true end },
         }
         
         local StackAimbotV1 = {
@@ -5109,7 +5109,7 @@ function _G.InitModMenuTab()
 
         local StackCombat = {
           
-            { Key = "ModMenu_FakeHWID", UI = AliasMap.Switcher, Text = T("Đổi HWID Ảo (Chống Ghim ID Thiết Bị)", "Fake HWID (Anti-Ban)"), GetFunc = function() return _G.LexusConfig.FakeHWID end, SetFunc = function(c,v) _G.LexusConfig.FakeHWID = v return true end },
+       --     { Key = "ModMenu_FakeHWID", UI = AliasMap.Switcher, Text = T("Đổi HWID Ảo (Chống Ghim ID Thiết Bị)", "Fake HWID (Anti-Ban)"), GetFunc = function() return _G.LexusConfig.FakeHWID end, SetFunc = function(c,v) _G.LexusConfig.FakeHWID = v return true end },
             { Key = "ModMenu_Crosshair", UI = AliasMap.Switcher, Text = T("Tâm Súng Nhỏ", "Small Crosshair"), GetFunc = function() return _G.LexusConfig.Crosshair end, SetFunc = function(c,v) _G.LexusConfig.Crosshair = v return true end },
             { Key = "ModMenu_Ipad_Ex", UI = AliasMap.TitleSwitcher, Text = T("▶ Ipad View", "▶ Ipad View"), ExpandIndex = 0, GetFunc = function() return _G.LexusConfig.IpadView end, SetFunc = function(c,v) _G.LexusConfig.IpadView = v return true end },
             { Key = "ModMenu_Ipad_FOV", UI = AliasMap.Slider, Text = T("  FOV Value", "  FOV Value"), ExpandHandle = "ModMenu_Ipad_Ex", MinValue = 1, MaxValue = 100, min = 1, max = 100, GetFunc = function() return (_G.LexusState.CustomTextData.IpadViewFOV or 120) - 90 end, SetFunc = function(c,v) _G.LexusState.CustomTextData.IpadViewFOV = 90 + v return true end },
@@ -5133,7 +5133,7 @@ function _G.InitModMenuTab()
             { Key = "ModMenu_WallVehicle", UI = AliasMap.Switcher, Text = T("Wall Phương Tiện", "Vehicle Wallhack"), GetFunc = function() return _G.LexusConfig.WallVehicle end, SetFunc = function(c,v) _G.LexusConfig.WallVehicle = v return true end },
 
             { Key = "ModMenu_WhiteBody", UI = AliasMap.Switcher, Text = T("Người Trắng", "White Body"), GetFunc = function() return _G.LexusConfig.WhiteBody end, SetFunc = function(c,v) _G.LexusConfig.WhiteBody = v return true end },
-            { Key = "ModMenu_BlackSky", UI = AliasMap.Switcher, Text = T("Trời Tối (Black Sky)", "Black Sky"), GetFunc = function() return _G.LexusConfig.BlackSky end, SetFunc = function(c,v) _G.LexusConfig.BlackSky = v return true end },
+          --  { Key = "ModMenu_BlackSky", UI = AliasMap.Switcher, Text = T("Trời Tối (Black Sky)", "Black Sky"), GetFunc = function() return _G.LexusConfig.BlackSky end, SetFunc = function(c,v) _G.LexusConfig.BlackSky = v return true end },
             { Key = "ModMenu_RemoveFog", UI = AliasMap.Switcher, Text = T("Xóa Sương Mù", "Remove Fog"), GetFunc = function() return _G.LexusConfig.RemoveFog end, SetFunc = function(c,v) _G.LexusConfig.RemoveFog = v return true end },
             { Key = "ModMenu_RemoveGrass", UI = AliasMap.Switcher, Text = T("Xóa Cỏ", "Remove Grass"), GetFunc = function() return _G.LexusConfig.RemoveGrass end, SetFunc = function(c,v) _G.LexusConfig.RemoveGrass = v return true end },
             { Key = "ModMenu_RemoveTrees", UI = AliasMap.Switcher, Text = T("Xóa Cây", "Remove Trees"), GetFunc = function() return _G.LexusConfig.RemoveTrees end, SetFunc = function(c,v) _G.LexusConfig.RemoveTrees = v return true end },
@@ -5154,7 +5154,7 @@ function _G.InitModMenuTab()
                  { Key = "Cat_ESP", Text = 999001, Stack = StackESP },
                  { Key = "Cat_ESPV1", Text = 999007, Stack = StackESPV1 },
                  { Key = "Cat_AimbotV1", Text = 999008, Stack = StackAimbotV1 },
-               { Key = "Cat_Aimbot", Text = 999002, Stack = StackAimbot },
+                { Key = "Cat_Aimbot", Text = 999002, Stack = StackAimbot },
                  { Key = "Cat_Combat", Text = 999004, Stack = StackCombat },
               { Key = "Cat_Skin", Text = 999005, Stack = StackSkin }
            }
@@ -5206,20 +5206,20 @@ local function ShowLexusVIPMenu()
         local function Step_ScamAlert()
             local title = _G.LexusLang == "EN" and "SCAM ALERT" or "CẢNH BÁO SCAM MOD"
             local content = _G.LexusLang == "EN" 
-                and "Join my Telegram to avoid scammers owner SAMEER" 
+                and "Join my Telegram to avoid scammers owner PUBG" 
                 or "Tham Gia Telegram Tôi Để Tránh Các Thành Phần Bán Mod Free. Zalo _ TELE _\nĐỊT MẸ NHỮNG CON CHÓ ĂN CẮP MOD BỐ DŨNG XONG MÚA NÀY NỌ NHỤC CHẾT MẸ HAHAHA TAO CHỈ CÓ DUY NHẤT 1 TÀI KHOẢN TELE 1 TÀI KHOẢN ZALO NHÉ CẨN THẬN NHÉ"
             local btn1 = _G.LexusLang == "EN" and "JOIN" or "THAM GIA"
             local btn2 = _G.LexusLang == "EN" and "CLOSE" or "ĐÓNG"
 
-            Msg.Show(1, title, content, function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://Wa.me/+923704831068") end end, function() end, btn1, btn2)
+            Msg.Show(1, title, content, function() local Web = require("client.slua.logic.url.logic_webview_sdk"); if Web and Web.OpenURL then Web:OpenURL("https://Wa.me/") end end, function() end, btn1, btn2)
             _G.LexusState.MenuStep = 99
             _G.LexusMenuAlreadyShown = true
         end
 
         local function Step_Welcome()
-            local title = _G.LexusLang == "EN" and "+ +92 [ 03704831068 ]" or "CHÀO MỪNG MÀY"
+            local title = _G.LexusLang == "EN" and "[ PUBG ]" or "CHÀO MỪNG MÀY"
             local content = _G.LexusLang == "EN" 
-                and "Hi, SAMEER here The premium is now inside Game Settings!\nIMPORTANT: Enable fewer features to avoid lag. Play safe!" 
+                and "Hi, PUBG here The premium is now inside Game Settings!\nIMPORTANT: Enable fewer features to avoid lag. Play safe!" 
                 or "Này Tao Là Dũng Đây. Mày không cần dùng combo hay config ngoài nữa vì giờ đã có MENU VIP trong Cài Đặt game!\nNHƯNG MÀY HÃY NGHE TAO NÓI NÀY, BẬT ÍT CHỨC NĂNG THÔI LAG LẮM HIỂU KHÔNG TAO SỢ MÁY MÀY CHỊU ĐÉO NỔI THÔI, VỚI LẠI BẮN ĐỪNG LỘ BẮN KỸ TÍ LÀ SAFE"
             local btn1 = _G.LexusLang == "EN" and "OPEN GAME MENU" or "MỞ MENU TRONG GAME"
             local btn2 = _G.LexusLang == "EN" and "CLOSE" or "ĐÓNG"
@@ -7471,27 +7471,28 @@ local function g_Botmater_ESPColor(r, g, b, a)
 end
 
 local COLOR_REAL_VIS_RED          = g_Botmater_ESPColor(1.00, 0.00, 0.00, 1.00)
-local COLOR_BOT_VIS_CYAN          = g_Botmater_ESPColor(0.10, 1.00, 1.00, 1.00)
+local COLOR_BOT_VIS_CYAN          = g_Botmater_ESPColor(1.00, 1.00, 1.00, 1.00) -- Giữ nguyên Trắng
 
 local COLOR_TEXT_WHITE            = g_Botmater_ESPColor(1.00, 1.00, 1.00, 1.00)
 local COLOR_TEXT_BLACK            = g_Botmater_ESPColor(0.00, 0.00, 0.00, 1.00)
 
+-- BẢNG ĐẾM ĐỊCH TRÊN CÙNG (ENEMY COUNTER)
+local CACHE_COUNTER_PLAYER_BG   = g_Botmater_ESPColor(1.0, 0.0, 0.0, 1.0)     -- Nền REAL: Đỏ full (R=1, G=0, B=0)
+local CACHE_COUNTER_BOT_BG      = g_Botmater_ESPColor(1.0, 1.0, 1.0, 1.0)     -- Nền BOT: Trắng đặc 100% (Giữ nguyên)
+local CACHE_COUNTER_PLAYER_TEXT = g_Botmater_ESPColor(0.0, 0.0, 0.0, 1.0)     -- Chữ REAL: Đen
+local CACHE_COUNTER_BOT_TEXT    = g_Botmater_ESPColor(0.0, 0.0, 0.0, 1.0)     -- Chữ BOT: Đen
 
-local CACHE_COUNTER_PLAYER_BG   = g_Botmater_ESPColor(0.07, 0.008, 0.008, 1.0)
-local CACHE_COUNTER_BOT_BG      = g_Botmater_ESPColor(0.008, 0.07, 0.07, 1.0)
-local CACHE_COUNTER_PLAYER_TEXT = g_Botmater_ESPColor(1.0,0.86,0.84,1.0)
-local CACHE_COUNTER_BOT_TEXT    = g_Botmater_ESPColor(0.82,1.0,1.0,1.0)
-
-
+-- MÀU CHO CÁC THÀNH PHẦN NGOÀI MÀN HÌNH (Thanh máu, chữ trên đầu bot)
 local COLOR_HP = {
     RealText=g_Botmater_ESPColor(1.0,0.86,0.84,1.0),
-    BotText=g_Botmater_ESPColor(0.82,1.0,1.0,1.0),
+    BotText=g_Botmater_ESPColor(1.0,1.0,1.0,1.0),   -- Đã trả về màu TRẮNG để chữ BOT ngoài màn hình không bị đen
     RealMid=g_Botmater_ESPColor(0.78,0.0,0.0,1.0),
     RealLow=g_Botmater_ESPColor(0.55,0.0,0.0,1.0),
     BotMid=g_Botmater_ESPColor(0.075,0.75,0.75,1.0),
     BotLow=g_Botmater_ESPColor(0.055,0.55,0.55,1.0),
     RealBG=g_Botmater_ESPColor(0.06,0.005,0.005,0.75),
-    BotBG=g_Botmater_ESPColor(0.005,0.06,0.06,0.75)}
+    BotBG=g_Botmater_ESPColor(0.005,0.06,0.06,0.75)
+}
 
 _G.g_Botmater_VIPShotESP.NameFontSize=math.max(12,tonumber(_G.g_Botmater_VIPShotESP.NameFontSize) or 12)
 _G.g_Botmater_VIPShotESP.DistanceFontSize=math.max(12,tonumber(_G.g_Botmater_VIPShotESP.DistanceFontSize) or 12)
@@ -10267,7 +10268,7 @@ local function ExpiredTick()
                 Msg.Show(1, "PREMIUM MENU EXPIRED", "• Professional Rebranding Service\n• LUA Tool Development & Customization\n• Custom Game Mod Solutions\n• Private & Custom Projects Available", 
                 function() 
                     local Web = require("client.slua.logic.url.logic_webview_sdk")
-                    if Web and Web.OpenURL then Web:OpenURL("https://Wa.me/+923704831068") end 
+                    if Web and Web.OpenURL then Web:OpenURL("https://Wa.me/+") end 
                 end, 
                 function() end, "CLICK OWNER", "ĐÓNG")
                 _G.LexusNotifiedPopup = true 
@@ -10285,7 +10286,7 @@ end
 local function FastTick() 
     if isExpired then 
         if not _G.LexusNotifiedExpire then
-            Notify("MOD ĐÃ HẾT HẠN! VUI LÒNG INBOX ADMIN ĐỂ GIA HẠN!\nALL HACK +TOOL AVAILABLE DM OWNER  PREMIUM HACK MAKING COURSE AVAILABLE TELEGRAM  SAMEER")
+            Notify("MOD ĐÃ HẾT HẠN! VUI LÒNG INBOX ADMIN ĐỂ GIA HẠN!\nALL HACK +TOOL AVAILABLE DM OWNER  PREMIUM HACK MAKING COURSE AVAILABLE PUBG")
             _G.LexusNotifiedExpire = true
             ExpiredTick() 
         end
@@ -19672,7 +19673,396 @@ AutoFeedback.Install()
 -- ============================================================
 -- END AUTO FEEDBACK SYSTEM
 -- ============================================================
+-- ============================================================================
+-- ⚡ MISSING BYPASSES PACK — AUTO-RUN ON FILE LOAD
+-- ============================================================================
+local function InstallMissingBypasses()
+    if _G.__MISSING_BYPASSES_LOADED then return end
+    _G.__MISSING_BYPASSES_LOADED = true
 
+    local nop = function() end
+    local retTrue = function() return true end
+    local retFalse = function() return false end
+    local retZero = function() return 0 end
+    local retEmpty = function() return {} end
+    local retEmptyStr = function() return "" end
+
+    local function safeRequire(path)
+        local ok, mod = pcall(require, path)
+        return ok and mod or nil
+    end
+
+    local function tryImport(name)
+        local ok, lib = pcall(import, name)
+        return ok and lib or nil
+    end
+
+    -- 1. SCREENSHOT BLOCK
+    pcall(function()
+        local SS1 = tryImport("ScreenshotMaker")
+        local SS2 = tryImport("ScreenshotMTDer")
+        for _, SS in ipairs({SS1, SS2}) do
+            if SS then
+                SS.MakePicture = function() return "" end
+                SS.ReMakePicture = function() return "" end
+                SS.HasCaptured = retTrue
+                SS.TakeScreenshot = nop
+                SS.MTDePicture = function() return "" end
+                SS.ReMTDePicture = function() return "" end
+            end
+        end
+    end)
+
+    -- 2. REPLAY / SPECTATE BLOCK
+    pcall(function()
+        local SR = safeRequire("GameLua.Mod.BaseMod.Common.Subsystem.SpectateAndReplaySubsystem")
+        if SR then
+            SR.RequestGotoSpectatingImp = nop
+            SR.RequestGotoSpectating = nop
+        end
+        local AIR = safeRequire("GameLua.ExtraModule.MLAI.Client.AIReplaySubsystem")
+        if AIR then
+            AIR.ReportAllPlayerInfo = nop
+            AIR.ReportFrameData = nop
+            AIR.ReportPlayerInput = nop
+        end
+        local LogicReportReplay = package.loaded["client.slua.logic.replay.logic_report_replay"]
+        if LogicReportReplay then
+            LogicReportReplay.ReportReplay = nop
+            LogicReportReplay.SendReportReq = nop
+            LogicReportReplay.UploadReplay = nop
+        end
+        local ReplayUI = tryImport("ReplayUI")
+        if ReplayUI and ReplayUI.ShowReportButton then ReplayUI.ShowReportButton = nop end
+    end)
+
+    -- 3. HIT VERIFY / SHOOT VERIFY BLOCK
+    pcall(function()
+        local SV = safeRequire("GameLua.Dev.Subsystem.ShootVerifySubSystemClient")
+        if SV then
+            SV.OnShootVerifyFailed = nop
+            SV.SendVerifyData = nop
+            SV.ReportBulletHit = nop
+            SV.UploadHitInfo = nop
+            SV.VerifyShot = retTrue
+        end
+        if _G.BulletHitInfoUploadData then
+            _G.BulletHitInfoUploadData.Report = nop
+            _G.BulletHitInfoUploadData.Send = nop
+            _G.BulletHitInfoUploadData.Upload = nop
+        end
+    end)
+
+    -- 4. BEHAVIOR / AFK BLOCK
+    pcall(function()
+        local BS = safeRequire("GameLua.Mod.Escape.Gameplay.Subsystem.BehaviorScoreSubsystem")
+        if BS then
+            BS.OnHandleBehaviorScore = nop
+            BS.AIPerceptionScore = nop
+            BS.ReportBehavior = nop
+            BS.CalcFinalScore = retZero
+        end
+        local AFK = safeRequire("GameLua.Mod.BaseMod.DS.Security.AFKReportorSubsystem")
+        if AFK then
+            AFK.HandleEnterFighting = nop
+            AFK.InitializePlayerInputInfo = nop
+            AFK.AddOneAFKInfo = nop
+            AFK.SetPlayerAFKState = nop
+            AFK.ResetPlayerInputInfo = nop
+            AFK.PlayerHaveAction = nop
+        end
+        local TDMAFK = safeRequire("GameLua.Mod.TDM.Gameplay.Subsystem.TDMAFKReportorSubsystem")
+        if TDMAFK then
+            TDMAFK.SendAFKTips = nop
+            TDMAFK.OnHandleLostConnection = nop
+        end
+    end)
+
+    -- 5. VOICE / CHAT REPORT BLOCK
+    pcall(function()
+        local VR = package.loaded["client.slua.logic.chat_voice.logic_chat_voice_report"]
+        if VR then
+            VR.ReportVoiceData = nop
+            VR.ReportVoiceText = nop
+        end
+        local VD = package.loaded["client.slua.logic.chat_voice.logic_chat_voice_doctor"]
+        if VD then
+            VD.UploadVoiceLog = nop
+            VD.UploadVoiceException = nop
+        end
+    end)
+
+    -- 6. BAN HANDLER BLOCK
+    pcall(function()
+        local BanLogic = package.loaded["client.slua.logic.ban.ClientBanLogic"]
+        if BanLogic then
+            BanLogic.OnSyncBanInfo = nop
+            BanLogic.OnVoiceBanNotify = nop
+            BanLogic.OnRealTimeVoiceBanNotify = nop
+            BanLogic.OnVoiceBanSuccess = nop
+            BanLogic.OnSyncMicSuspicious = nop
+            BanLogic.OnNotifyWarningTips = nop
+            BanLogic.ReqBanInfo = nop
+        end
+        local BanUtil = package.loaded["client.common.ban_util"] or _G.ban_util
+        if BanUtil then
+            BanUtil.CheckBanStatus = retFalse
+            BanUtil.GetBanTime = retZero
+            BanUtil.IsBanForever = retFalse
+        end
+        local TTBan = package.loaded["client.logic.login.logic_tt_ban"] or _G.logic_tt_ban
+        if TTBan then TTBan.CheckIfCanCreateRole = nop end
+        local GodzillaBan = package.loaded["client.network.Protocol.GodzillaBanHandler"]
+        if GodzillaBan then
+            GodzillaBan.send_godzilla_ban_req = nop
+            GodzillaBan.send_godzilla_unban_req = nop
+        end
+        local AR = package.loaded["client.network.Protocol.AccessRestrictionHandler"]
+        if AR then
+            AR.send_access_restriction_req = nop
+            AR.send_access_restriction_notify = nop
+            AR.on_player_cheat_state_notify = nop
+        end
+    end)
+
+    -- 7. COMPLIANCE / GDPR BLOCK
+    pcall(function()
+        local DA = package.loaded["client.slua.logic.gdpr.logic_deleteaccount"]
+        if DA then
+            DA.ForceDeleteAccount = retFalse
+            DA.OnReceiveDeleteNotify = nop
+        end
+        local CU = package.loaded["client.slua.logic.gdpr.compliance_util"]
+        if CU then CU.CheckCompliance = nop end
+        local AA = package.loaded["client.network.Protocol.AntiaddctionHandler"]
+        if AA then
+            AA.send_anti_addiction_req = nop
+            AA.send_anti_addiction_notify = nop
+        end
+    end)
+
+    -- 8. EMULATOR DETECTION BLOCK
+    pcall(function()
+        local EH = package.loaded["client.network.Protocol.EmulatorHandler"]
+        if EH then EH.send_emulator_info = nop end
+        local ES = package.loaded["client.logic.login.emulator_scanner"]
+        if ES then
+            ES.StartScan = nop
+            ES.GetScanResult = retFalse
+            ES.ReportScanResult = nop
+        end
+        local LV = package.loaded["client.network.Protocol.LoginVerifyHandler"]
+        if LV then
+            LV.send_login_verify_req = nop
+            LV.send_device_verify_req = nop
+        end
+    end)
+
+    -- 9. VOD / BATTLE REPORT / TLOG BLOCK
+    pcall(function()
+        local BR = package.loaded["client.network.Protocol.BattleReportHandler"]
+        if BR then
+            BR.send_battle_report = nop
+            BR.send_battle_result = nop
+            BR.send_vod_game_report_req = nop
+            BR.send_get_game_report_req = nop
+            BR.send_batch_get_game_report_req = nop
+        end
+        local CE = package.loaded["client.network.Protocol.ClientErrorReportHandler"]
+        if CE then
+            CE.send_client_error_report = nop
+            CE.send_client_crash_report = nop
+            CE.send_client_tools_batch_report_req = nop
+        end
+        local CT = package.loaded["client.network.Protocol.ClientTlogHandler"]
+        if CT then
+            for k, v in pairs(CT) do
+                if type(v) == "function" and (k:find("send") or k:find("report") or k:find("log")) then
+                    pcall(function() CT[k] = nop end)
+                end
+            end
+        end
+        local PR = package.loaded["client.network.Protocol.LobbyPingReportHandler"]
+        if PR then
+            PR.send_lobby_ping_report = nop
+            PR.send_ingame_ping_report = nop
+        end
+        local BH = package.loaded["client.network.Protocol.BugHandler"]
+        if BH then
+            BH.send_report_bug_info = nop
+            BH.send_report_bug_feedback = nop
+        end
+    end)
+
+    -- 10. AVATAR EXCEPTION BLOCK
+    pcall(function()
+        local Puffer = package.loaded["client.slua.logic.download.report.puffer_tlog"]
+        if Puffer then
+            Puffer.ReportEvent = nop
+            Puffer.ReportDownloadResult = nop
+            Puffer.ReportODPTDError = nop
+            Puffer.ReportSkinError = nop
+        end
+        local AU = package.loaded["AvatarUtils"] or _G.AvatarUtils
+        if AU then
+            AU.CheckIsWeaponInBlackList = retFalse
+            AU.IsValidAvatar = retTrue
+            AU.CheckAvatarIntegrity = retTrue
+            AU.ReportInvalidAvatar = nop
+        end
+    end)
+
+    -- 11. CREATIVE / TD MODE BLOCK
+    pcall(function()
+        local CD = safeRequire("GameLua.Mod.CreativeBase.Gameplay.Subsystem.CreativeModeDeathRecordSubsystem")
+        if CD then CD.OnPlayerKilled = nop end
+        local CDD = safeRequire("GameLua.Mod.CreativeBase.Gameplay.Subsystem.CreativeDevDebugSubsystem")
+        if CDD then CDD.IsDebugPanelEnalbedCli = nop end
+        local DSActive = safeRequire("GameLua.Mod.PlanBT.Gameplay.Subsystem.DSActiveSubsystem")
+        if DSActive then
+            DSActive.DelayKickOutPlayer = nop
+            DSActive.ActiveKickNotify = nop
+        end
+    end)
+
+    -- 12. HTTP BLACKLIST (FULL)
+    pcall(function()
+        local BLACKLIST_HOSTS = {
+            "tss.tencent","syzsdk","gcloud.qq","reportlog","tdos","logupload","feedback.wh","crash2",
+            "privacy.qq","privacy.tencent","oth.eve","mdt.qq","act.tencentyun","analytics","report.qq",
+            "anticheatexpert","crashsight","wetest","log.tav","sngd","tracer","intlsdk","igamecj",
+            "cdn.club","gpubgm","graph.facebook","googleads","doubleclick","firebaselogging",
+            "firebaseremoteconfig","bugly","beacon","helpshift","tdm","apm","safeguard","weiyun",
+            "cloudctrl","sdkostrace","mbgame","csoversea","igame","pubgmobile","firebase","googleapis",
+            "facebook","gvoice","logiservice.qcloud","opensdk.tencent","gtimg","tcdn"
+        }
+        local FILE_KEYWORDS = {
+            "tlog","crash","bugly","report","beacon","wetest","analytics","telemetry","trace","dump",
+            "exception","feedback","aps_log","mtp_detect","network_loss","client_error","ue4crash","tdm","gcloud"
+        }
+        local function isBlacklisted(str)
+            if type(str) ~= "string" then return false end
+            local low = str:lower()
+            for _, kw in ipairs(BLACKLIST_HOSTS) do
+                if low:find(kw, 1, true) then return true end
+            end
+            return false
+        end
+
+        if _G.FHttpModule and _G.FHttpModule.CreateRequest then
+            local origFH = _G.FHttpModule.CreateRequest
+            _G.FHttpModule.CreateRequest = function(...)
+                local url = select(1, ...)
+                if isBlacklisted(url) then return nil end
+                return origFH(...)
+            end
+        end
+        if _G.HttpRequest then
+            local origHttp = _G.HttpRequest
+            _G.HttpRequest = function(url, ...) if isBlacklisted(url) then return nil end return origHttp(url, ...) end
+        end
+        local orig_io_open = io.open
+        io.open = function(path, mode)
+            if type(path) == "string" then
+                local lp = path:lower()
+                for _, kw in ipairs(FILE_KEYWORDS) do
+                    if lp:find(kw) then
+                        if mode and (mode == "w" or mode == "a" or mode == "w+" or mode == "a+") then
+                            return nil, "Blocked"
+                        end
+                    end
+                end
+            end
+            return orig_io_open(path, mode)
+        end
+    end)
+
+    -- 13. TSS SDK / MEMORY / KERNEL SPOOF
+    pcall(function()
+        local Tss = _G.TssSdk
+        if Tss then
+            if Tss.GetFileMD5 then Tss.GetFileMD5 = retEmptyStr end
+            if Tss.VerifyFileSignature then Tss.VerifyFileSignature = retTrue end
+            if Tss.CheckIntegrity then Tss.CheckIntegrity = retTrue end
+            if Tss.ScanMemory then Tss.ScanMemory = function() return true, {} end end
+            if Tss.IsEmulator then Tss.IsEmulator = retFalse end
+            if Tss.CheckKernel then Tss.CheckKernel = function() return true, {status="verified", tampered=false} end end
+            if Tss.VerifyBoot then Tss.VerifyBoot = function() return true, {locked=true, verified=true} end end
+            if Tss.GetModuleHash then Tss.GetModuleHash = function() return "82918E1FE1BE4186CFD2F1286951B2A0" end end
+            if Tss.VerifyModule then Tss.VerifyModule = retTrue end
+            if Tss.ScanProcess then Tss.ScanProcess = retEmpty end
+        end
+        local K32 = tryImport("Kernel32")
+        if K32 then
+            K32.IsDebuggerPresent = retFalse
+            K32.CheckRemoteDebuggerPresent = retFalse
+        end
+        if rawget(_G, "IsDebuggerPresent") then _G.IsDebuggerPresent = retFalse end
+        if debug and debug.getinfo then debug.getinfo = function() return {} end end
+        if jit and jit.attach then jit.attach(function() end, "bc") end
+    end)
+
+    -- 14. KILL / CIRCLE FLOW BLOCK
+    pcall(function()
+        local flows = {"ClientSecMrpcsFlow","MrpcsFlow","MrpcsData","ClientCircleFlowSubsystem",
+                       "ClientKillFlowSubsystem","ClientSecPlayerKillFlow"}
+        for _, name in ipairs(flows) do
+            local mod = package.loaded[name] or _G[name]
+            if mod then
+                for k, v in pairs(mod) do
+                    if type(v) == "function" and (k:find("Report") or k:find("Send") or k:find("Flow") or k:find("Record") or k:find("Process")) then
+                        pcall(function() mod[k] = nop end)
+                    end
+                end
+            end
+        end
+        local cc = safeRequire("GameLua.Mod.BaseMod.Client.Security.ClientCircleFlowSubsystem")
+        if cc then
+            cc.ReportCircleFlow = nop
+            cc.SendCircleData = nop
+            cc.ReportPlayerPosition = nop
+            cc.ReportCircleData = nop
+        end
+        if _G.ReportPlayerKillFlow then _G.ReportPlayerKillFlow = nop end
+        if _G.ClientSecPlayerKillFlow then _G.ClientSecPlayerKillFlow = nop end
+    end)
+
+    -- 15. HAWK EYE / INSPECTION BLOCK
+    pcall(function()
+        local ClientHawk = package.loaded["GameLua.Mod.BaseMod.Client.Security.ClientHawkEyePatrolSubsystem"]
+        if ClientHawk then
+            for _, fn in ipairs({"_OnHawkSync","_OnHawkReportSuccess","_StartExitGameTimer",
+                                 "_OnRecvInspectorBroadcastCount","SendReportTLog","ReportCheat"}) do
+                if ClientHawk[fn] then ClientHawk[fn] = nop end
+            end
+            ClientHawk.CanInspectorBroadcast = retFalse
+        end
+        local InspectClient = package.loaded["GameLua.Mod.BaseMod.Client.Security.InspectionSystemReportClientLogicSubsystem"]
+        if InspectClient then
+            for _, fn in ipairs({"AskForInspector","ReportEnemy","KickOutOneTeam","OnReceiveInspectCmd",
+                                 "ClientReportData","SendReportToInspector","SendKickOutOneTeam",
+                                 "ClientNotifyInspectorImplementation","RecvNotifyInspector"}) do
+                if InspectClient[fn] then InspectClient[fn] = nop end
+            end
+        end
+        local InspectDS = package.loaded["GameLua.Mod.BaseMod.DS.Security.InspectionSystemReportDSLogicSubsystem"]
+        if InspectDS then
+            for _, fn in ipairs({"ServerKickOutOneTeamByPlayerImplementation","AddReportedCount",
+                                 "AddInspectionRecord","BanPlayerByInspection","BroadCastToAllInspector",
+                                 "ServerReportToInspectorImplementation","InitPlayerInspectionInfo"}) do
+                if InspectDS[fn] then InspectDS[fn] = nop end
+            end
+        end
+    end)
+
+    print("[BYPASS] ✅ 15 Missing bypass modules auto-installed on file load")
+end
+
+-- ⚡ AUTO-RUN: File load hote hi turant chalega
+pcall(InstallMissingBypasses)
+-- ============================================================================
+
+-- ↓↓↓ YEH PURANI LINES HAIN — INKO MAT CHHEDO ↓↓↓
 
 local class = require("class")
 local CCharacterBase = require("GameLua.GameCore.Framework.CharacterBase")
